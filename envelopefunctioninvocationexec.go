@@ -3,7 +3,7 @@
 package nvidiacloudfunctions
 
 import (
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/option"
+	"github.com/brevdev/nvcf-go/option"
 )
 
 // EnvelopeFunctionInvocationExecService contains methods and other services that

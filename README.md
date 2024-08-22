@@ -1,6 +1,6 @@
 # Nvidia Cloud Functions Go API Library
 
-<a href="https://pkg.go.dev/github.com/stainless-sdks/nvidia-cloud-functions-go"><img src="https://pkg.go.dev/badge/github.com/stainless-sdks/nvidia-cloud-functions-go.svg" alt="Go Reference"></a>
+<a href="https://pkg.go.dev/github.com/brevdev/nvcf-go"><img src="https://pkg.go.dev/badge/github.com/brevdev/nvcf-go.svg" alt="Go Reference"></a>
 
 The Nvidia Cloud Functions Go library provides convenient access to [the Nvidia Cloud Functions REST
 API](https://www.nvidia.com/) from applications written in Go. The full API of this library can be found in [api.md](api.md).
@@ -11,14 +11,14 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ```go
 import (
-	"github.com/stainless-sdks/nvidia-cloud-functions-go" // imported as nvidiacloudfunctions
+	"github.com/brevdev/nvcf-go" // imported as nvidiacloudfunctions
 )
 ```
 
 Or to pin the version:
 
 ```sh
-go get -u 'github.com/stainless-sdks/nvidia-cloud-functions-go@v0.0.1-alpha.0'
+go get -u 'github.com/brevdev/nvcf-go@v0.0.1-alpha.0'
 ```
 
 ## Requirements
@@ -36,7 +36,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/stainless-sdks/nvidia-cloud-functions-go"
+	"github.com/brevdev/nvcf-go"
 )
 
 func main() {
@@ -145,7 +145,7 @@ client.Nvcf.Functions.New(context.TODO(), ...,
 )
 ```
 
-See the [full list of request options](https://pkg.go.dev/github.com/stainless-sdks/nvidia-cloud-functions-go/option).
+See the [full list of request options](https://pkg.go.dev/github.com/brevdev/nvcf-go/option).
 
 ### Pagination
 
@@ -338,4 +338,4 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/nvidia-cloud-functions-go/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/brevdev/nvcf-go/issues) with questions, bugs, or suggestions.

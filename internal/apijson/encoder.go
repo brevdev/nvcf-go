@@ -12,7 +12,7 @@ import (
 
 	"github.com/tidwall/sjson"
 
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/param"
+	"github.com/brevdev/nvcf-go/internal/param"
 )
 
 var encoders sync.Map // map[encoderEntry]encoderFunc

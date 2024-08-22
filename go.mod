@@ -1,4 +1,4 @@
-module github.com/stainless-sdks/nvidia-cloud-functions-go
+module github.com/brevdev/nvcf-go
 
 go 1.21
 
