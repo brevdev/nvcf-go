@@ -1,5 +1,5 @@
-github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
-github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/stainless-sdks/nvidia-cloud-functions-go v0.0.0-20240822200832-477a7edbcfd5 h1:kzoous603rs3Bl9Okkyfks2gdJRzfR+SK6sLKMXTup4=
+github.com/stainless-sdks/nvidia-cloud-functions-go v0.0.0-20240822200832-477a7edbcfd5/go.mod h1:1uZB91Rg6dih359pPx1HG33/w88JLCtsP9vn4ZMo3mQ=
 github.com/tidwall/gjson v1.14.2/go.mod h1:/wbyibRr2FHMks5tjHJ5F8dMZh3AcwJEMf5vlfC0lxk=
 github.com/tidwall/gjson v1.14.4 h1:uo0p8EbA09J7RQaflQ1aBRffTR7xedD2bcIVSYxLnkM=
 github.com/tidwall/gjson v1.14.4/go.mod h1:/wbyibRr2FHMks5tjHJ5F8dMZh3AcwJEMf5vlfC0lxk=
