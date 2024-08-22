@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/nvidia-cloud-functions-go"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/testutil"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/option"
+	"github.com/brevdev/nvcf-go"
+	"github.com/brevdev/nvcf-go/internal/testutil"
+	"github.com/brevdev/nvcf-go/option"
 )
 
 func TestEnvelopeFunctionInvocationFunctionVersionInvokeWithOptionalParams(t *testing.T) {

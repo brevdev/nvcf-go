@@ -10,12 +10,12 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/apijson"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/apiquery"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/param"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/requestconfig"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/option"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/shared"
+	"github.com/brevdev/nvcf-go/internal/apijson"
+	"github.com/brevdev/nvcf-go/internal/apiquery"
+	"github.com/brevdev/nvcf-go/internal/param"
+	"github.com/brevdev/nvcf-go/internal/requestconfig"
+	"github.com/brevdev/nvcf-go/option"
+	"github.com/brevdev/nvcf-go/shared"
 )
 
 // FunctionDeploymentFunctionVersionService contains methods and other services

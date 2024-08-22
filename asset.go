@@ -6,10 +6,10 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/apijson"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/param"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/requestconfig"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/option"
+	"github.com/brevdev/nvcf-go/internal/apijson"
+	"github.com/brevdev/nvcf-go/internal/param"
+	"github.com/brevdev/nvcf-go/internal/requestconfig"
+	"github.com/brevdev/nvcf-go/option"
 )
 
 // AssetService contains methods and other services that help with interacting with
