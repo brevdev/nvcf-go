@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/nvidia-cloud-functions-go"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/option"
+	"github.com/brevdev/nvcf-go"
+	"github.com/brevdev/nvcf-go/internal"
+	"github.com/brevdev/nvcf-go/option"
 )
 
 type closureTransport struct {

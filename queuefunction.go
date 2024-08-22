@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/requestconfig"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/option"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/shared"
+	"github.com/brevdev/nvcf-go/internal/requestconfig"
+	"github.com/brevdev/nvcf-go/option"
+	"github.com/brevdev/nvcf-go/shared"
 )
 
 // QueueFunctionService contains methods and other services that help with

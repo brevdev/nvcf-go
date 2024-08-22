@@ -6,8 +6,8 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/requestconfig"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/option"
+	"github.com/brevdev/nvcf-go/internal/requestconfig"
+	"github.com/brevdev/nvcf-go/option"
 )
 
 // Client creates a struct with services and top level methods that help with

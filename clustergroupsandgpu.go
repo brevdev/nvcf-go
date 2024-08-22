@@ -3,7 +3,7 @@
 package nvidiacloudfunctions
 
 import (
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/option"
+	"github.com/brevdev/nvcf-go/option"
 )
 
 // ClusterGroupsAndGPUService contains methods and other services that help with
