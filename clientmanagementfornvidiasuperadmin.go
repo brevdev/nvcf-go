@@ -3,7 +3,7 @@
 package nvidiacloudfunctions
 
 import (
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/option"
+	"github.com/brevdev/nvcf-go/option"
 )
 
 // ClientManagementForNvidiaSuperAdminService contains methods and other services
