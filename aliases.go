@@ -3,8 +3,8 @@
 package nvidiacloudfunctions
 
 import (
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/apierror"
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/shared"
+	"github.com/brevdev/nvcf-go/internal/apierror"
+	"github.com/brevdev/nvcf-go/shared"
 )
 
 type Error = apierror.Error

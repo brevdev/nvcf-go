@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"github.com/stainless-sdks/nvidia-cloud-functions-go/internal/apijson"
+	"github.com/brevdev/nvcf-go/internal/apijson"
 )
 
 // Error represents an error that originates from the API, i.e. when a request is
