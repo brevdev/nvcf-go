@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions_test
+package nvcf_test
 
 import (
 	"context"
@@ -20,12 +20,12 @@ func TestUsage(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	createFunctionResponse, err := client.Nvcf.Functions.New(context.TODO(), nvidiacloudfunctions.NvcfFunctionNewParams{
-		InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-		Name:         nvidiacloudfunctions.F("x"),
+	createFunctionResponse, err := client.NVCF.Functions.New(context.TODO(), nvcf.NVCFFunctionNewParams{
+		InferenceURL: nvcf.F("https://example.com"),
+		Name:         nvcf.F("x"),
 	})
 	if err != nil {
 		t.Error(err)

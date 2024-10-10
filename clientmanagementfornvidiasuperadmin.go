@@ -1,29 +1,29 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions
+package nvcf
 
 import (
 	"github.com/brevdev/nvcf-go/option"
 )
 
-// ClientManagementForNvidiaSuperAdminService contains methods and other services
-// that help with interacting with the nvidia-cloud-functions API.
+// ClientManagementForNVIDIASuperAdminService contains methods and other services
+// that help with interacting with the nvcf API.
 //
 // Note, unlike clients, this service does not read variables from the environment
 // automatically. You should not instantiate this service directly, and instead use
-// the [NewClientManagementForNvidiaSuperAdminService] method instead.
-type ClientManagementForNvidiaSuperAdminService struct {
+// the [NewClientManagementForNVIDIASuperAdminService] method instead.
+type ClientManagementForNVIDIASuperAdminService struct {
 	Options []option.RequestOption
-	Clients *ClientManagementForNvidiaSuperAdminClientService
+	Clients *ClientManagementForNVIDIASuperAdminClientService
 }
 
-// NewClientManagementForNvidiaSuperAdminService generates a new service that
+// NewClientManagementForNVIDIASuperAdminService generates a new service that
 // applies the given options to each request. These options are applied after the
 // parent client's options (if there is one), and before any request-specific
 // options.
-func NewClientManagementForNvidiaSuperAdminService(opts ...option.RequestOption) (r *ClientManagementForNvidiaSuperAdminService) {
-	r = &ClientManagementForNvidiaSuperAdminService{}
+func NewClientManagementForNVIDIASuperAdminService(opts ...option.RequestOption) (r *ClientManagementForNVIDIASuperAdminService) {
+	r = &ClientManagementForNVIDIASuperAdminService{}
 	r.Options = opts
-	r.Clients = NewClientManagementForNvidiaSuperAdminClientService(opts...)
+	r.Clients = NewClientManagementForNVIDIASuperAdminClientService(opts...)
 	return
 }

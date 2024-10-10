@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions
+package nvcf
 
 import (
 	"context"
@@ -15,7 +15,7 @@ import (
 )
 
 // PexecStatusService contains methods and other services that help with
-// interacting with the nvidia-cloud-functions API.
+// interacting with the nvcf API.
 //
 // Note, unlike clients, this service does not read variables from the environment
 // automatically. You should not instantiate this service directly, and instead use
@@ -89,5 +89,5 @@ func (r pexecStatusGetResponseJSON) RawJSON() string {
 }
 
 type PexecStatusGetParams struct {
-	NvcfPollSeconds param.Field[int64] `header:"NVCF-POLL-SECONDS"`
+	NVCFPollSeconds param.Field[int64] `header:"NVCF-POLL-SECONDS"`
 }

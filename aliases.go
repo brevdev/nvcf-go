@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions
+package nvcf
 
 import (
 	"github.com/brevdev/nvcf-go/internal/apierror"
