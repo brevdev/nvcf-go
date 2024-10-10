@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions_test
+package nvcf_test
 
 import (
 	"context"
@@ -21,32 +21,32 @@ func TestEnvelopeFunctionInvocationFunctionInvokeWithOptionalParams(t *testing.T
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.EnvelopeFunctionInvocation.Functions.Invoke(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		nvidiacloudfunctions.EnvelopeFunctionInvocationFunctionInvokeParams{
-			RequestBody: nvidiacloudfunctions.F[any](map[string]interface{}{}),
-			RequestHeader: nvidiacloudfunctions.F(nvidiacloudfunctions.EnvelopeFunctionInvocationFunctionInvokeParamsRequestHeader{
-				InputAssetReferences: nvidiacloudfunctions.F([]string{"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e", "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e", "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"}),
-				MeteringData: nvidiacloudfunctions.F([]nvidiacloudfunctions.EnvelopeFunctionInvocationFunctionInvokeParamsRequestHeaderMeteringData{{
-					Key:   nvidiacloudfunctions.F("key"),
-					Value: nvidiacloudfunctions.F("value"),
+		nvcf.EnvelopeFunctionInvocationFunctionInvokeParams{
+			RequestBody: nvcf.F[any](map[string]interface{}{}),
+			RequestHeader: nvcf.F(nvcf.EnvelopeFunctionInvocationFunctionInvokeParamsRequestHeader{
+				InputAssetReferences: nvcf.F([]string{"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e", "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e", "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"}),
+				MeteringData: nvcf.F([]nvcf.EnvelopeFunctionInvocationFunctionInvokeParamsRequestHeaderMeteringData{{
+					Key:   nvcf.F("key"),
+					Value: nvcf.F("value"),
 				}, {
-					Key:   nvidiacloudfunctions.F("key"),
-					Value: nvidiacloudfunctions.F("value"),
+					Key:   nvcf.F("key"),
+					Value: nvcf.F("value"),
 				}, {
-					Key:   nvidiacloudfunctions.F("key"),
-					Value: nvidiacloudfunctions.F("value"),
+					Key:   nvcf.F("key"),
+					Value: nvcf.F("value"),
 				}}),
-				PollDurationSeconds: nvidiacloudfunctions.F(int64(0)),
+				PollDurationSeconds: nvcf.F(int64(0)),
 			}),
 		},
 	)
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

@@ -1,28 +1,28 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions
+package nvcf
 
 import (
 	"github.com/brevdev/nvcf-go/option"
 )
 
-// NvcfAuthorizationService contains methods and other services that help with
-// interacting with the nvidia-cloud-functions API.
+// NVCFAuthorizationService contains methods and other services that help with
+// interacting with the nvcf API.
 //
 // Note, unlike clients, this service does not read variables from the environment
 // automatically. You should not instantiate this service directly, and instead use
-// the [NewNvcfAuthorizationService] method instead.
-type NvcfAuthorizationService struct {
+// the [NewNVCFAuthorizationService] method instead.
+type NVCFAuthorizationService struct {
 	Options   []option.RequestOption
-	Functions *NvcfAuthorizationFunctionService
+	Functions *NVCFAuthorizationFunctionService
 }
 
-// NewNvcfAuthorizationService generates a new service that applies the given
+// NewNVCFAuthorizationService generates a new service that applies the given
 // options to each request. These options are applied after the parent client's
 // options (if there is one), and before any request-specific options.
-func NewNvcfAuthorizationService(opts ...option.RequestOption) (r *NvcfAuthorizationService) {
-	r = &NvcfAuthorizationService{}
+func NewNVCFAuthorizationService(opts ...option.RequestOption) (r *NVCFAuthorizationService) {
+	r = &NVCFAuthorizationService{}
 	r.Options = opts
-	r.Functions = NewNvcfAuthorizationFunctionService(opts...)
+	r.Functions = NewNVCFAuthorizationFunctionService(opts...)
 	return
 }

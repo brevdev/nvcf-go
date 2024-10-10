@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions
+package nvcf
 
 import (
 	"context"
@@ -11,8 +11,8 @@ import (
 )
 
 // Client creates a struct with services and top level methods that help with
-// interacting with the nvidia-cloud-functions API. You should not instantiate this
-// client directly, and instead use the [NewClient] method instead.
+// interacting with the nvcf API. You should not instantiate this client directly,
+// and instead use the [NewClient] method instead.
 type Client struct {
 	Options                              []option.RequestOption
 	UserSecretManagement                 *UserSecretManagementService
@@ -20,13 +20,13 @@ type Client struct {
 	FunctionDeployment                   *FunctionDeploymentService
 	FunctionInvocation                   *FunctionInvocationService
 	EnvelopeFunctionInvocation           *EnvelopeFunctionInvocationService
-	Nvcf                                 *NvcfService
+	NVCF                                 *NVCFService
 	Assets                               *AssetService
 	Authorizations                       *AuthorizationService
 	Queues                               *QueueService
 	Pexec                                *PexecService
 	ClusterGroupsAndGPUs                 *ClusterGroupsAndGPUService
-	ClientManagementForNvidiaSuperAdmins *ClientManagementForNvidiaSuperAdminService
+	ClientManagementForNVIDIASuperAdmins *ClientManagementForNVIDIASuperAdminService
 	AssetManagement                      *AssetManagementService
 }
 
@@ -45,13 +45,13 @@ func NewClient(opts ...option.RequestOption) (r *Client) {
 	r.FunctionDeployment = NewFunctionDeploymentService(opts...)
 	r.FunctionInvocation = NewFunctionInvocationService(opts...)
 	r.EnvelopeFunctionInvocation = NewEnvelopeFunctionInvocationService(opts...)
-	r.Nvcf = NewNvcfService(opts...)
+	r.NVCF = NewNVCFService(opts...)
 	r.Assets = NewAssetService(opts...)
 	r.Authorizations = NewAuthorizationService(opts...)
 	r.Queues = NewQueueService(opts...)
 	r.Pexec = NewPexecService(opts...)
 	r.ClusterGroupsAndGPUs = NewClusterGroupsAndGPUService(opts...)
-	r.ClientManagementForNvidiaSuperAdmins = NewClientManagementForNvidiaSuperAdminService(opts...)
+	r.ClientManagementForNVIDIASuperAdmins = NewClientManagementForNVIDIASuperAdminService(opts...)
 	r.AssetManagement = NewAssetManagementService(opts...)
 
 	return

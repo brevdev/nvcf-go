@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions_test
+package nvcf_test
 
 import (
 	"context"
@@ -21,21 +21,21 @@ func TestAuthorizationFunctionAddWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Authorizations.Functions.Add(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		nvidiacloudfunctions.AuthorizationFunctionAddParams{
-			AuthorizedParty: nvidiacloudfunctions.F(nvidiacloudfunctions.AuthorizationFunctionAddParamsAuthorizedParty{
-				NcaID:    nvidiacloudfunctions.F("ncaId"),
-				ClientID: nvidiacloudfunctions.F("clientId"),
+		nvcf.AuthorizationFunctionAddParams{
+			AuthorizedParty: nvcf.F(nvcf.AuthorizationFunctionAddParamsAuthorizedParty{
+				NcaID:    nvcf.F("ncaId"),
+				ClientID: nvcf.F("clientId"),
 			}),
 		},
 	)
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -51,21 +51,21 @@ func TestAuthorizationFunctionRemoveWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.Authorizations.Functions.Remove(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		nvidiacloudfunctions.AuthorizationFunctionRemoveParams{
-			AuthorizedParty: nvidiacloudfunctions.F(nvidiacloudfunctions.AuthorizationFunctionRemoveParamsAuthorizedParty{
-				NcaID:    nvidiacloudfunctions.F("ncaId"),
-				ClientID: nvidiacloudfunctions.F("clientId"),
+		nvcf.AuthorizationFunctionRemoveParams{
+			AuthorizedParty: nvcf.F(nvcf.AuthorizationFunctionRemoveParamsAuthorizedParty{
+				NcaID:    nvcf.F("ncaId"),
+				ClientID: nvcf.F("clientId"),
 			}),
 		},
 	)
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions_test
+package nvcf_test
 
 import (
 	"context"
@@ -13,7 +13,7 @@ import (
 	"github.com/brevdev/nvcf-go/option"
 )
 
-func TestNvcfFunctionVersionNewWithOptionalParams(t *testing.T) {
+func TestNVCFFunctionVersionNewWithOptionalParams(t *testing.T) {
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -21,60 +21,60 @@ func TestNvcfFunctionVersionNewWithOptionalParams(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Nvcf.Functions.Versions.New(
+	_, err := client.NVCF.Functions.Versions.New(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		nvidiacloudfunctions.NvcfFunctionVersionNewParams{
-			InferenceURL:  nvidiacloudfunctions.F("https://example.com"),
-			Name:          nvidiacloudfunctions.F("x"),
-			APIBodyFormat: nvidiacloudfunctions.F(nvidiacloudfunctions.NvcfFunctionVersionNewParamsAPIBodyFormatPredictV2),
-			ContainerArgs: nvidiacloudfunctions.F("containerArgs"),
-			ContainerEnvironment: nvidiacloudfunctions.F([]nvidiacloudfunctions.NvcfFunctionVersionNewParamsContainerEnvironment{{
-				Key:   nvidiacloudfunctions.F("key"),
-				Value: nvidiacloudfunctions.F("value"),
+		nvcf.NVCFFunctionVersionNewParams{
+			InferenceURL:  nvcf.F("https://example.com"),
+			Name:          nvcf.F("x"),
+			APIBodyFormat: nvcf.F(nvcf.NVCFFunctionVersionNewParamsAPIBodyFormatPredictV2),
+			ContainerArgs: nvcf.F("containerArgs"),
+			ContainerEnvironment: nvcf.F([]nvcf.NVCFFunctionVersionNewParamsContainerEnvironment{{
+				Key:   nvcf.F("key"),
+				Value: nvcf.F("value"),
 			}, {
-				Key:   nvidiacloudfunctions.F("key"),
-				Value: nvidiacloudfunctions.F("value"),
+				Key:   nvcf.F("key"),
+				Value: nvcf.F("value"),
 			}, {
-				Key:   nvidiacloudfunctions.F("key"),
-				Value: nvidiacloudfunctions.F("value"),
+				Key:   nvcf.F("key"),
+				Value: nvcf.F("value"),
 			}}),
-			ContainerImage: nvidiacloudfunctions.F("https://example.com"),
-			Description:    nvidiacloudfunctions.F("description"),
-			FunctionType:   nvidiacloudfunctions.F(nvidiacloudfunctions.NvcfFunctionVersionNewParamsFunctionTypeDefault),
-			Health: nvidiacloudfunctions.F(nvidiacloudfunctions.NvcfFunctionVersionNewParamsHealth{
-				ExpectedStatusCode: nvidiacloudfunctions.F(int64(0)),
-				Port:               nvidiacloudfunctions.F(int64(0)),
-				Protocol:           nvidiacloudfunctions.F(nvidiacloudfunctions.NvcfFunctionVersionNewParamsHealthProtocolHTTP),
-				Timeout:            nvidiacloudfunctions.F("PT10S"),
-				Uri:                nvidiacloudfunctions.F("https://example.com"),
+			ContainerImage: nvcf.F("https://example.com"),
+			Description:    nvcf.F("description"),
+			FunctionType:   nvcf.F(nvcf.NVCFFunctionVersionNewParamsFunctionTypeDefault),
+			Health: nvcf.F(nvcf.NVCFFunctionVersionNewParamsHealth{
+				ExpectedStatusCode: nvcf.F(int64(0)),
+				Port:               nvcf.F(int64(0)),
+				Protocol:           nvcf.F(nvcf.NVCFFunctionVersionNewParamsHealthProtocolHTTP),
+				Timeout:            nvcf.F("PT10S"),
+				Uri:                nvcf.F("https://example.com"),
 			}),
-			HealthUri:            nvidiacloudfunctions.F("https://example.com"),
-			HelmChart:            nvidiacloudfunctions.F("https://example.com"),
-			HelmChartServiceName: nvidiacloudfunctions.F("helmChartServiceName"),
-			InferencePort:        nvidiacloudfunctions.F(int64(0)),
-			Models: nvidiacloudfunctions.F([]nvidiacloudfunctions.NvcfFunctionVersionNewParamsModel{{
-				Name:    nvidiacloudfunctions.F("name"),
-				Uri:     nvidiacloudfunctions.F("https://example.com"),
-				Version: nvidiacloudfunctions.F("version"),
+			HealthUri:            nvcf.F("https://example.com"),
+			HelmChart:            nvcf.F("https://example.com"),
+			HelmChartServiceName: nvcf.F("helmChartServiceName"),
+			InferencePort:        nvcf.F(int64(0)),
+			Models: nvcf.F([]nvcf.NVCFFunctionVersionNewParamsModel{{
+				Name:    nvcf.F("name"),
+				Uri:     nvcf.F("https://example.com"),
+				Version: nvcf.F("version"),
 			}}),
-			Resources: nvidiacloudfunctions.F([]nvidiacloudfunctions.NvcfFunctionVersionNewParamsResource{{
-				Name:    nvidiacloudfunctions.F("name"),
-				Uri:     nvidiacloudfunctions.F("https://example.com"),
-				Version: nvidiacloudfunctions.F("version"),
+			Resources: nvcf.F([]nvcf.NVCFFunctionVersionNewParamsResource{{
+				Name:    nvcf.F("name"),
+				Uri:     nvcf.F("https://example.com"),
+				Version: nvcf.F("version"),
 			}}),
-			Secrets: nvidiacloudfunctions.F([]nvidiacloudfunctions.NvcfFunctionVersionNewParamsSecret{{
-				Name:  nvidiacloudfunctions.F("x"),
-				Value: nvidiacloudfunctions.F("x"),
+			Secrets: nvcf.F([]nvcf.NVCFFunctionVersionNewParamsSecret{{
+				Name:  nvcf.F("x"),
+				Value: nvcf.F("x"),
 			}}),
-			Tags: nvidiacloudfunctions.F([]string{"string"}),
+			Tags: nvcf.F([]string{"string"}),
 		},
 	)
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -82,7 +82,7 @@ func TestNvcfFunctionVersionNewWithOptionalParams(t *testing.T) {
 	}
 }
 
-func TestNvcfFunctionVersionList(t *testing.T) {
+func TestNVCFFunctionVersionList(t *testing.T) {
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -90,12 +90,12 @@ func TestNvcfFunctionVersionList(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Nvcf.Functions.Versions.List(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
+	_, err := client.NVCF.Functions.Versions.List(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

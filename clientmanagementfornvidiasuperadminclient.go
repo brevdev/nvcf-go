@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions
+package nvcf
 
 import (
 	"context"
@@ -13,22 +13,22 @@ import (
 	"github.com/brevdev/nvcf-go/option"
 )
 
-// ClientManagementForNvidiaSuperAdminClientService contains methods and other
-// services that help with interacting with the nvidia-cloud-functions API.
+// ClientManagementForNVIDIASuperAdminClientService contains methods and other
+// services that help with interacting with the nvcf API.
 //
 // Note, unlike clients, this service does not read variables from the environment
 // automatically. You should not instantiate this service directly, and instead use
-// the [NewClientManagementForNvidiaSuperAdminClientService] method instead.
-type ClientManagementForNvidiaSuperAdminClientService struct {
+// the [NewClientManagementForNVIDIASuperAdminClientService] method instead.
+type ClientManagementForNVIDIASuperAdminClientService struct {
 	Options []option.RequestOption
 }
 
-// NewClientManagementForNvidiaSuperAdminClientService generates a new service that
+// NewClientManagementForNVIDIASuperAdminClientService generates a new service that
 // applies the given options to each request. These options are applied after the
 // parent client's options (if there is one), and before any request-specific
 // options.
-func NewClientManagementForNvidiaSuperAdminClientService(opts ...option.RequestOption) (r *ClientManagementForNvidiaSuperAdminClientService) {
-	r = &ClientManagementForNvidiaSuperAdminClientService{}
+func NewClientManagementForNVIDIASuperAdminClientService(opts ...option.RequestOption) (r *ClientManagementForNVIDIASuperAdminClientService) {
+	r = &ClientManagementForNVIDIASuperAdminClientService{}
 	r.Options = opts
 	return
 }
@@ -36,7 +36,7 @@ func NewClientManagementForNvidiaSuperAdminClientService(opts ...option.RequestO
 // Gets details of the specified client.Requires a bearer token in the HTTP
 // Authorization header with 'account_setup' scope. These endpoints are invoked by
 // NVIDIA Super Admins working across accounts.
-func (r *ClientManagementForNvidiaSuperAdminClientService) Get(ctx context.Context, clientID string, opts ...option.RequestOption) (res *ClientManagementForNvidiaSuperAdminClientGetResponse, err error) {
+func (r *ClientManagementForNVIDIASuperAdminClientService) Get(ctx context.Context, clientID string, opts ...option.RequestOption) (res *ClientManagementForNVIDIASuperAdminClientGetResponse, err error) {
 	opts = append(r.Options[:], opts...)
 	if clientID == "" {
 		err = errors.New("missing required clientId parameter")
@@ -48,43 +48,43 @@ func (r *ClientManagementForNvidiaSuperAdminClientService) Get(ctx context.Conte
 }
 
 // Response body for client.
-type ClientManagementForNvidiaSuperAdminClientGetResponse struct {
+type ClientManagementForNVIDIASuperAdminClientGetResponse struct {
 	// Data Transfer Object(DTO) representing a client
-	Client ClientManagementForNvidiaSuperAdminClientGetResponseClient `json:"client,required"`
-	JSON   clientManagementForNvidiaSuperAdminClientGetResponseJSON   `json:"-"`
+	Client ClientManagementForNVIDIASuperAdminClientGetResponseClient `json:"client,required"`
+	JSON   clientManagementForNVIDIASuperAdminClientGetResponseJSON   `json:"-"`
 }
 
-// clientManagementForNvidiaSuperAdminClientGetResponseJSON contains the JSON
-// metadata for the struct [ClientManagementForNvidiaSuperAdminClientGetResponse]
-type clientManagementForNvidiaSuperAdminClientGetResponseJSON struct {
+// clientManagementForNVIDIASuperAdminClientGetResponseJSON contains the JSON
+// metadata for the struct [ClientManagementForNVIDIASuperAdminClientGetResponse]
+type clientManagementForNVIDIASuperAdminClientGetResponseJSON struct {
 	Client      apijson.Field
 	raw         string
 	ExtraFields map[string]apijson.Field
 }
 
-func (r *ClientManagementForNvidiaSuperAdminClientGetResponse) UnmarshalJSON(data []byte) (err error) {
+func (r *ClientManagementForNVIDIASuperAdminClientGetResponse) UnmarshalJSON(data []byte) (err error) {
 	return apijson.UnmarshalRoot(data, r)
 }
 
-func (r clientManagementForNvidiaSuperAdminClientGetResponseJSON) RawJSON() string {
+func (r clientManagementForNVIDIASuperAdminClientGetResponseJSON) RawJSON() string {
 	return r.raw
 }
 
 // Data Transfer Object(DTO) representing a client
-type ClientManagementForNvidiaSuperAdminClientGetResponseClient struct {
+type ClientManagementForNVIDIASuperAdminClientGetResponseClient struct {
 	// Name of the associated NVIDIA Cloud Account
 	Name string `json:"name,required"`
 	// Associated NVIDIA Cloud Account id
 	NcaID string `json:"ncaId,required"`
 	// Client Id
 	ClientID string                                                         `json:"clientId"`
-	JSON     clientManagementForNvidiaSuperAdminClientGetResponseClientJSON `json:"-"`
+	JSON     clientManagementForNVIDIASuperAdminClientGetResponseClientJSON `json:"-"`
 }
 
-// clientManagementForNvidiaSuperAdminClientGetResponseClientJSON contains the JSON
+// clientManagementForNVIDIASuperAdminClientGetResponseClientJSON contains the JSON
 // metadata for the struct
-// [ClientManagementForNvidiaSuperAdminClientGetResponseClient]
-type clientManagementForNvidiaSuperAdminClientGetResponseClientJSON struct {
+// [ClientManagementForNVIDIASuperAdminClientGetResponseClient]
+type clientManagementForNVIDIASuperAdminClientGetResponseClientJSON struct {
 	Name        apijson.Field
 	NcaID       apijson.Field
 	ClientID    apijson.Field
@@ -92,10 +92,10 @@ type clientManagementForNvidiaSuperAdminClientGetResponseClientJSON struct {
 	ExtraFields map[string]apijson.Field
 }
 
-func (r *ClientManagementForNvidiaSuperAdminClientGetResponseClient) UnmarshalJSON(data []byte) (err error) {
+func (r *ClientManagementForNVIDIASuperAdminClientGetResponseClient) UnmarshalJSON(data []byte) (err error) {
 	return apijson.UnmarshalRoot(data, r)
 }
 
-func (r clientManagementForNvidiaSuperAdminClientGetResponseClientJSON) RawJSON() string {
+func (r clientManagementForNVIDIASuperAdminClientGetResponseClientJSON) RawJSON() string {
 	return r.raw
 }

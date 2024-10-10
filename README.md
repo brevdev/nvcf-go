@@ -1,8 +1,8 @@
-# Nvidia Cloud Functions Go API Library
+# NVCF Go API Library
 
 <a href="https://pkg.go.dev/github.com/brevdev/nvcf-go"><img src="https://pkg.go.dev/badge/github.com/brevdev/nvcf-go.svg" alt="Go Reference"></a>
 
-The Nvidia Cloud Functions Go library provides convenient access to [the Nvidia Cloud Functions REST
+The NVCF Go library provides convenient access to [the NVCF REST
 API](https://www.nvidia.com/) from applications written in Go. The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
@@ -13,7 +13,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ```go
 import (
-	"github.com/brevdev/nvcf-go" // imported as nvidiacloudfunctions
+	"github.com/brevdev/nvcf-go" // imported as nvcf
 )
 ```
 
@@ -48,10 +48,10 @@ import (
 )
 
 func main() {
-	client := nvidiacloudfunctions.NewClient()
-	createFunctionResponse, err := client.Nvcf.Functions.New(context.TODO(), nvidiacloudfunctions.NvcfFunctionNewParams{
-		InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-		Name:         nvidiacloudfunctions.F("x"),
+	client := nvcf.NewClient()
+	createFunctionResponse, err := client.NVCF.Functions.New(context.TODO(), nvcf.NVCFFunctionNewParams{
+		InferenceURL: nvcf.F("https://example.com"),
+		Name:         nvcf.F("x"),
 	})
 	if err != nil {
 		panic(err.Error())
@@ -75,18 +75,18 @@ To send a null, use `Null[T]()`, and to send a nonconforming value, use `Raw[T](
 
 ```go
 params := FooParams{
-	Name: nvidiacloudfunctions.F("hello"),
+	Name: nvcf.F("hello"),
 
 	// Explicitly send `"description": null`
-	Description: nvidiacloudfunctions.Null[string](),
+	Description: nvcf.Null[string](),
 
-	Point: nvidiacloudfunctions.F(nvidiacloudfunctions.Point{
-		X: nvidiacloudfunctions.Int(0),
-		Y: nvidiacloudfunctions.Int(1),
+	Point: nvcf.F(nvcf.Point{
+		X: nvcf.Int(0),
+		Y: nvcf.Int(1),
 
 		// In cases where the API specifies a given type,
 		// but you want to send something else, use `Raw`:
-		Z: nvidiacloudfunctions.Raw[int64](0.01), // sends a float
+		Z: nvcf.Raw[int64](0.01), // sends a float
 	}),
 }
 ```
@@ -140,12 +140,12 @@ This library uses the functional options pattern. Functions defined in the
 requests. For example:
 
 ```go
-client := nvidiacloudfunctions.NewClient(
+client := nvcf.NewClient(
 	// Adds a header to every request made by the client
 	option.WithHeader("X-Some-Header", "custom_header_info"),
 )
 
-client.Nvcf.Functions.New(context.TODO(), ...,
+client.NVCF.Functions.New(context.TODO(), ...,
 	// Override the header
 	option.WithHeader("X-Some-Header", "some_other_custom_header_info"),
 	// Add an undocumented field to the request body, using sjson syntax
@@ -167,19 +167,19 @@ with additional helper methods like `.GetNextPage()`, e.g.:
 ### Errors
 
 When the API returns a non-success status code, we return an error with type
-`*nvidiacloudfunctions.Error`. This contains the `StatusCode`, `*http.Request`, and
+`*nvcf.Error`. This contains the `StatusCode`, `*http.Request`, and
 `*http.Response` values of the request, as well as the JSON of the error body
 (much like other response objects in the SDK).
 
 To handle errors, we recommend that you use the `errors.As` pattern:
 
 ```go
-_, err := client.Nvcf.Functions.New(context.TODO(), nvidiacloudfunctions.NvcfFunctionNewParams{
-	InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-	Name:         nvidiacloudfunctions.F("x"),
+_, err := client.NVCF.Functions.New(context.TODO(), nvcf.NVCFFunctionNewParams{
+	InferenceURL: nvcf.F("https://example.com"),
+	Name:         nvcf.F("x"),
 })
 if err != nil {
-	var apierr *nvidiacloudfunctions.Error
+	var apierr *nvcf.Error
 	if errors.As(err, &apierr) {
 		println(string(apierr.DumpRequest(true)))  // Prints the serialized HTTP request
 		println(string(apierr.DumpResponse(true))) // Prints the serialized HTTP response
@@ -202,11 +202,11 @@ To set a per-retry timeout, use `option.WithRequestTimeout()`.
 // This sets the timeout for the request, including all the retries.
 ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 defer cancel()
-client.Nvcf.Functions.New(
+client.NVCF.Functions.New(
 	ctx,
-	nvidiacloudfunctions.NvcfFunctionNewParams{
-		InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-		Name:         nvidiacloudfunctions.F("x"),
+	nvcf.NVCFFunctionNewParams{
+		InferenceURL: nvcf.F("https://example.com"),
+		Name:         nvcf.F("x"),
 	},
 	// This sets the per-retry timeout
 	option.WithRequestTimeout(20*time.Second),
@@ -223,7 +223,7 @@ The file name and content-type can be customized by implementing `Name() string`
 string` on the run-time type of `io.Reader`. Note that `os.File` implements `Name() string`, so a
 file returned by `os.Open` will be sent with the file name on disk.
 
-We also provide a helper `nvidiacloudfunctions.FileParam(reader io.Reader, filename string, contentType string)`
+We also provide a helper `nvcf.FileParam(reader io.Reader, filename string, contentType string)`
 which can be used to wrap any `io.Reader` with the appropriate file name and content type.
 
 ### Retries
@@ -236,16 +236,16 @@ You can use the `WithMaxRetries` option to configure or disable this:
 
 ```go
 // Configure the default for all requests:
-client := nvidiacloudfunctions.NewClient(
+client := nvcf.NewClient(
 	option.WithMaxRetries(0), // default is 2
 )
 
 // Override per-request:
-client.Nvcf.Functions.New(
+client.NVCF.Functions.New(
 	context.TODO(),
-	nvidiacloudfunctions.NvcfFunctionNewParams{
-		InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-		Name:         nvidiacloudfunctions.F("x"),
+	nvcf.NVCFFunctionNewParams{
+		InferenceURL: nvcf.F("https://example.com"),
+		Name:         nvcf.F("x"),
 	},
 	option.WithMaxRetries(5),
 )
@@ -284,9 +284,9 @@ or the `option.WithJSONSet()` methods.
 
 ```go
 params := FooNewParams{
-    ID:   nvidiacloudfunctions.F("id_xxxx"),
-    Data: nvidiacloudfunctions.F(FooNewParamsData{
-        FirstName: nvidiacloudfunctions.F("John"),
+    ID:   nvcf.F("id_xxxx"),
+    Data: nvcf.F(FooNewParamsData{
+        FirstName: nvcf.F("John"),
     }),
 }
 client.Foo.New(context.Background(), params, option.WithJSONSet("data.last_name", "Doe"))
@@ -321,7 +321,7 @@ func Logger(req *http.Request, next option.MiddlewareNext) (res *http.Response, 
     return res, err
 }
 
-client := nvidiacloudfunctions.NewClient(
+client := nvcf.NewClient(
 	option.WithMiddleware(Logger),
 )
 ```

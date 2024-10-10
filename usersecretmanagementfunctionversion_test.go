@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions_test
+package nvcf_test
 
 import (
 	"context"
@@ -21,22 +21,22 @@ func TestUserSecretManagementFunctionVersionUpdate(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.UserSecretManagement.Functions.Versions.Update(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		nvidiacloudfunctions.UserSecretManagementFunctionVersionUpdateParams{
-			Secrets: nvidiacloudfunctions.F([]nvidiacloudfunctions.UserSecretManagementFunctionVersionUpdateParamsSecret{{
-				Name:  nvidiacloudfunctions.F("x"),
-				Value: nvidiacloudfunctions.F("x"),
+		nvcf.UserSecretManagementFunctionVersionUpdateParams{
+			Secrets: nvcf.F([]nvcf.UserSecretManagementFunctionVersionUpdateParamsSecret{{
+				Name:  nvcf.F("x"),
+				Value: nvcf.F("x"),
 			}}),
 		},
 	)
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

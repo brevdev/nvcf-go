@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions_test
+package nvcf_test
 
 import (
 	"context"
@@ -21,58 +21,58 @@ func TestFunctionDeploymentFunctionVersionNew(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.FunctionDeployment.Functions.Versions.New(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		nvidiacloudfunctions.FunctionDeploymentFunctionVersionNewParams{
-			DeploymentSpecifications: nvidiacloudfunctions.F([]nvidiacloudfunctions.FunctionDeploymentFunctionVersionNewParamsDeploymentSpecification{{
-				GPU:                   nvidiacloudfunctions.F("gpu"),
-				InstanceType:          nvidiacloudfunctions.F("instanceType"),
-				MaxInstances:          nvidiacloudfunctions.F(int64(0)),
-				MinInstances:          nvidiacloudfunctions.F(int64(0)),
-				Attributes:            nvidiacloudfunctions.F([]string{"string"}),
-				AvailabilityZones:     nvidiacloudfunctions.F([]string{"string", "string", "string"}),
-				Backend:               nvidiacloudfunctions.F("backend"),
-				Clusters:              nvidiacloudfunctions.F([]string{"string"}),
-				Configuration:         nvidiacloudfunctions.F[any](map[string]interface{}{}),
-				MaxRequestConcurrency: nvidiacloudfunctions.F(int64(1)),
-				PreferredOrder:        nvidiacloudfunctions.F(int64(1)),
-				Regions:               nvidiacloudfunctions.F([]string{"string"}),
+		nvcf.FunctionDeploymentFunctionVersionNewParams{
+			DeploymentSpecifications: nvcf.F([]nvcf.FunctionDeploymentFunctionVersionNewParamsDeploymentSpecification{{
+				GPU:                   nvcf.F("gpu"),
+				InstanceType:          nvcf.F("instanceType"),
+				MaxInstances:          nvcf.F(int64(0)),
+				MinInstances:          nvcf.F(int64(0)),
+				Attributes:            nvcf.F([]string{"string"}),
+				AvailabilityZones:     nvcf.F([]string{"string", "string", "string"}),
+				Backend:               nvcf.F("backend"),
+				Clusters:              nvcf.F([]string{"string"}),
+				Configuration:         nvcf.F[any](map[string]interface{}{}),
+				MaxRequestConcurrency: nvcf.F(int64(1)),
+				PreferredOrder:        nvcf.F(int64(1)),
+				Regions:               nvcf.F([]string{"string"}),
 			}, {
-				GPU:                   nvidiacloudfunctions.F("gpu"),
-				InstanceType:          nvidiacloudfunctions.F("instanceType"),
-				MaxInstances:          nvidiacloudfunctions.F(int64(0)),
-				MinInstances:          nvidiacloudfunctions.F(int64(0)),
-				Attributes:            nvidiacloudfunctions.F([]string{"string"}),
-				AvailabilityZones:     nvidiacloudfunctions.F([]string{"string", "string", "string"}),
-				Backend:               nvidiacloudfunctions.F("backend"),
-				Clusters:              nvidiacloudfunctions.F([]string{"string"}),
-				Configuration:         nvidiacloudfunctions.F[any](map[string]interface{}{}),
-				MaxRequestConcurrency: nvidiacloudfunctions.F(int64(1)),
-				PreferredOrder:        nvidiacloudfunctions.F(int64(1)),
-				Regions:               nvidiacloudfunctions.F([]string{"string"}),
+				GPU:                   nvcf.F("gpu"),
+				InstanceType:          nvcf.F("instanceType"),
+				MaxInstances:          nvcf.F(int64(0)),
+				MinInstances:          nvcf.F(int64(0)),
+				Attributes:            nvcf.F([]string{"string"}),
+				AvailabilityZones:     nvcf.F([]string{"string", "string", "string"}),
+				Backend:               nvcf.F("backend"),
+				Clusters:              nvcf.F([]string{"string"}),
+				Configuration:         nvcf.F[any](map[string]interface{}{}),
+				MaxRequestConcurrency: nvcf.F(int64(1)),
+				PreferredOrder:        nvcf.F(int64(1)),
+				Regions:               nvcf.F([]string{"string"}),
 			}, {
-				GPU:                   nvidiacloudfunctions.F("gpu"),
-				InstanceType:          nvidiacloudfunctions.F("instanceType"),
-				MaxInstances:          nvidiacloudfunctions.F(int64(0)),
-				MinInstances:          nvidiacloudfunctions.F(int64(0)),
-				Attributes:            nvidiacloudfunctions.F([]string{"string"}),
-				AvailabilityZones:     nvidiacloudfunctions.F([]string{"string", "string", "string"}),
-				Backend:               nvidiacloudfunctions.F("backend"),
-				Clusters:              nvidiacloudfunctions.F([]string{"string"}),
-				Configuration:         nvidiacloudfunctions.F[any](map[string]interface{}{}),
-				MaxRequestConcurrency: nvidiacloudfunctions.F(int64(1)),
-				PreferredOrder:        nvidiacloudfunctions.F(int64(1)),
-				Regions:               nvidiacloudfunctions.F([]string{"string"}),
+				GPU:                   nvcf.F("gpu"),
+				InstanceType:          nvcf.F("instanceType"),
+				MaxInstances:          nvcf.F(int64(0)),
+				MinInstances:          nvcf.F(int64(0)),
+				Attributes:            nvcf.F([]string{"string"}),
+				AvailabilityZones:     nvcf.F([]string{"string", "string", "string"}),
+				Backend:               nvcf.F("backend"),
+				Clusters:              nvcf.F([]string{"string"}),
+				Configuration:         nvcf.F[any](map[string]interface{}{}),
+				MaxRequestConcurrency: nvcf.F(int64(1)),
+				PreferredOrder:        nvcf.F(int64(1)),
+				Regions:               nvcf.F([]string{"string"}),
 			}}),
 		},
 	)
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -88,7 +88,7 @@ func TestFunctionDeploymentFunctionVersionGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.FunctionDeployment.Functions.Versions.Get(
@@ -97,7 +97,7 @@ func TestFunctionDeploymentFunctionVersionGet(t *testing.T) {
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 	)
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -113,58 +113,58 @@ func TestFunctionDeploymentFunctionVersionUpdate(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.FunctionDeployment.Functions.Versions.Update(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		nvidiacloudfunctions.FunctionDeploymentFunctionVersionUpdateParams{
-			DeploymentSpecifications: nvidiacloudfunctions.F([]nvidiacloudfunctions.FunctionDeploymentFunctionVersionUpdateParamsDeploymentSpecification{{
-				GPU:                   nvidiacloudfunctions.F("gpu"),
-				InstanceType:          nvidiacloudfunctions.F("instanceType"),
-				MaxInstances:          nvidiacloudfunctions.F(int64(0)),
-				MinInstances:          nvidiacloudfunctions.F(int64(0)),
-				Attributes:            nvidiacloudfunctions.F([]string{"string"}),
-				AvailabilityZones:     nvidiacloudfunctions.F([]string{"string", "string", "string"}),
-				Backend:               nvidiacloudfunctions.F("backend"),
-				Clusters:              nvidiacloudfunctions.F([]string{"string"}),
-				Configuration:         nvidiacloudfunctions.F[any](map[string]interface{}{}),
-				MaxRequestConcurrency: nvidiacloudfunctions.F(int64(1)),
-				PreferredOrder:        nvidiacloudfunctions.F(int64(1)),
-				Regions:               nvidiacloudfunctions.F([]string{"string"}),
+		nvcf.FunctionDeploymentFunctionVersionUpdateParams{
+			DeploymentSpecifications: nvcf.F([]nvcf.FunctionDeploymentFunctionVersionUpdateParamsDeploymentSpecification{{
+				GPU:                   nvcf.F("gpu"),
+				InstanceType:          nvcf.F("instanceType"),
+				MaxInstances:          nvcf.F(int64(0)),
+				MinInstances:          nvcf.F(int64(0)),
+				Attributes:            nvcf.F([]string{"string"}),
+				AvailabilityZones:     nvcf.F([]string{"string", "string", "string"}),
+				Backend:               nvcf.F("backend"),
+				Clusters:              nvcf.F([]string{"string"}),
+				Configuration:         nvcf.F[any](map[string]interface{}{}),
+				MaxRequestConcurrency: nvcf.F(int64(1)),
+				PreferredOrder:        nvcf.F(int64(1)),
+				Regions:               nvcf.F([]string{"string"}),
 			}, {
-				GPU:                   nvidiacloudfunctions.F("gpu"),
-				InstanceType:          nvidiacloudfunctions.F("instanceType"),
-				MaxInstances:          nvidiacloudfunctions.F(int64(0)),
-				MinInstances:          nvidiacloudfunctions.F(int64(0)),
-				Attributes:            nvidiacloudfunctions.F([]string{"string"}),
-				AvailabilityZones:     nvidiacloudfunctions.F([]string{"string", "string", "string"}),
-				Backend:               nvidiacloudfunctions.F("backend"),
-				Clusters:              nvidiacloudfunctions.F([]string{"string"}),
-				Configuration:         nvidiacloudfunctions.F[any](map[string]interface{}{}),
-				MaxRequestConcurrency: nvidiacloudfunctions.F(int64(1)),
-				PreferredOrder:        nvidiacloudfunctions.F(int64(1)),
-				Regions:               nvidiacloudfunctions.F([]string{"string"}),
+				GPU:                   nvcf.F("gpu"),
+				InstanceType:          nvcf.F("instanceType"),
+				MaxInstances:          nvcf.F(int64(0)),
+				MinInstances:          nvcf.F(int64(0)),
+				Attributes:            nvcf.F([]string{"string"}),
+				AvailabilityZones:     nvcf.F([]string{"string", "string", "string"}),
+				Backend:               nvcf.F("backend"),
+				Clusters:              nvcf.F([]string{"string"}),
+				Configuration:         nvcf.F[any](map[string]interface{}{}),
+				MaxRequestConcurrency: nvcf.F(int64(1)),
+				PreferredOrder:        nvcf.F(int64(1)),
+				Regions:               nvcf.F([]string{"string"}),
 			}, {
-				GPU:                   nvidiacloudfunctions.F("gpu"),
-				InstanceType:          nvidiacloudfunctions.F("instanceType"),
-				MaxInstances:          nvidiacloudfunctions.F(int64(0)),
-				MinInstances:          nvidiacloudfunctions.F(int64(0)),
-				Attributes:            nvidiacloudfunctions.F([]string{"string"}),
-				AvailabilityZones:     nvidiacloudfunctions.F([]string{"string", "string", "string"}),
-				Backend:               nvidiacloudfunctions.F("backend"),
-				Clusters:              nvidiacloudfunctions.F([]string{"string"}),
-				Configuration:         nvidiacloudfunctions.F[any](map[string]interface{}{}),
-				MaxRequestConcurrency: nvidiacloudfunctions.F(int64(1)),
-				PreferredOrder:        nvidiacloudfunctions.F(int64(1)),
-				Regions:               nvidiacloudfunctions.F([]string{"string"}),
+				GPU:                   nvcf.F("gpu"),
+				InstanceType:          nvcf.F("instanceType"),
+				MaxInstances:          nvcf.F(int64(0)),
+				MinInstances:          nvcf.F(int64(0)),
+				Attributes:            nvcf.F([]string{"string"}),
+				AvailabilityZones:     nvcf.F([]string{"string", "string", "string"}),
+				Backend:               nvcf.F("backend"),
+				Clusters:              nvcf.F([]string{"string"}),
+				Configuration:         nvcf.F[any](map[string]interface{}{}),
+				MaxRequestConcurrency: nvcf.F(int64(1)),
+				PreferredOrder:        nvcf.F(int64(1)),
+				Regions:               nvcf.F([]string{"string"}),
 			}}),
 		},
 	)
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -180,19 +180,19 @@ func TestFunctionDeploymentFunctionVersionDeleteWithOptionalParams(t *testing.T)
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.FunctionDeployment.Functions.Versions.Delete(
 		context.TODO(),
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
 		"182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",
-		nvidiacloudfunctions.FunctionDeploymentFunctionVersionDeleteParams{
-			Graceful: nvidiacloudfunctions.F(true),
+		nvcf.FunctionDeploymentFunctionVersionDeleteParams{
+			Graceful: nvcf.F(true),
 		},
 	)
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}

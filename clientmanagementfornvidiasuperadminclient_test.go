@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions_test
+package nvcf_test
 
 import (
 	"context"
@@ -13,7 +13,7 @@ import (
 	"github.com/brevdev/nvcf-go/option"
 )
 
-func TestClientManagementForNvidiaSuperAdminClientGet(t *testing.T) {
+func TestClientManagementForNVIDIASuperAdminClientGet(t *testing.T) {
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -21,12 +21,12 @@ func TestClientManagementForNvidiaSuperAdminClientGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.ClientManagementForNvidiaSuperAdmins.Clients.Get(context.TODO(), "clientId")
+	_, err := client.ClientManagementForNVIDIASuperAdmins.Clients.Get(context.TODO(), "clientId")
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
