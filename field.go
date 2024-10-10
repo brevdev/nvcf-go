@@ -1,4 +1,4 @@
-package nvidiacloudfunctions
+package nvcf
 
 import (
 	"github.com/brevdev/nvcf-go/internal/param"

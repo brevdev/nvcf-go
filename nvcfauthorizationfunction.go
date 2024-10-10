@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions
+package nvcf
 
 import (
 	"context"
@@ -15,24 +15,24 @@ import (
 	"github.com/brevdev/nvcf-go/shared"
 )
 
-// NvcfAuthorizationFunctionService contains methods and other services that help
-// with interacting with the nvidia-cloud-functions API.
+// NVCFAuthorizationFunctionService contains methods and other services that help
+// with interacting with the nvcf API.
 //
 // Note, unlike clients, this service does not read variables from the environment
 // automatically. You should not instantiate this service directly, and instead use
-// the [NewNvcfAuthorizationFunctionService] method instead.
-type NvcfAuthorizationFunctionService struct {
+// the [NewNVCFAuthorizationFunctionService] method instead.
+type NVCFAuthorizationFunctionService struct {
 	Options  []option.RequestOption
-	Versions *NvcfAuthorizationFunctionVersionService
+	Versions *NVCFAuthorizationFunctionVersionService
 }
 
-// NewNvcfAuthorizationFunctionService generates a new service that applies the
+// NewNVCFAuthorizationFunctionService generates a new service that applies the
 // given options to each request. These options are applied after the parent
 // client's options (if there is one), and before any request-specific options.
-func NewNvcfAuthorizationFunctionService(opts ...option.RequestOption) (r *NvcfAuthorizationFunctionService) {
-	r = &NvcfAuthorizationFunctionService{}
+func NewNVCFAuthorizationFunctionService(opts ...option.RequestOption) (r *NVCFAuthorizationFunctionService) {
+	r = &NVCFAuthorizationFunctionService{}
 	r.Options = opts
-	r.Versions = NewNvcfAuthorizationFunctionVersionService(opts...)
+	r.Versions = NewNVCFAuthorizationFunctionVersionService(opts...)
 	return
 }
 
@@ -42,7 +42,7 @@ func NewNvcfAuthorizationFunctionService(opts ...option.RequestOption) (r *NvcfA
 // authorized accounts. So, each object in the array can have different authorized
 // accounts listed. Access to this functionality mandates the inclusion of a bearer
 // token with the 'authorize_clients' scope in the HTTP Authorization header
-func (r *NvcfAuthorizationFunctionService) List(ctx context.Context, functionID string, opts ...option.RequestOption) (res *ListAuthorizedPartiesResponse, err error) {
+func (r *NVCFAuthorizationFunctionService) List(ctx context.Context, functionID string, opts ...option.RequestOption) (res *ListAuthorizedPartiesResponse, err error) {
 	opts = append(r.Options[:], opts...)
 	if functionID == "" {
 		err = errors.New("missing required functionId parameter")
@@ -59,7 +59,7 @@ func (r *NvcfAuthorizationFunctionService) List(ctx context.Context, functionID 
 // then Account Admin cannot perform this operation. Access to this functionality
 // mandates the inclusion of a bearer token with the 'authorize_clients' scope in
 // the HTTP Authorization header
-func (r *NvcfAuthorizationFunctionService) Delete(ctx context.Context, functionID string, opts ...option.RequestOption) (res *shared.AuthorizedPartiesResponse, err error) {
+func (r *NVCFAuthorizationFunctionService) Delete(ctx context.Context, functionID string, opts ...option.RequestOption) (res *shared.AuthorizedPartiesResponse, err error) {
 	opts = append(r.Options[:], opts...)
 	if functionID == "" {
 		err = errors.New("missing required functionId parameter")
@@ -77,7 +77,7 @@ func (r *NvcfAuthorizationFunctionService) Delete(ctx context.Context, functionI
 // authorized accounts will be overwritten by the newly specified authorized
 // accounts. Access to this functionality mandates the inclusion of a bearer token
 // with the 'authorize_clients' scope in the HTTP Authorization header
-func (r *NvcfAuthorizationFunctionService) Authorize(ctx context.Context, functionID string, body NvcfAuthorizationFunctionAuthorizeParams, opts ...option.RequestOption) (res *shared.AuthorizedPartiesResponse, err error) {
+func (r *NVCFAuthorizationFunctionService) Authorize(ctx context.Context, functionID string, body NVCFAuthorizationFunctionAuthorizeParams, opts ...option.RequestOption) (res *shared.AuthorizedPartiesResponse, err error) {
 	opts = append(r.Options[:], opts...)
 	if functionID == "" {
 		err = errors.New("missing required functionId parameter")
@@ -169,23 +169,23 @@ func (r listAuthorizedPartiesResponseFunctionsAuthorizedPartyJSON) RawJSON() str
 	return r.raw
 }
 
-type NvcfAuthorizationFunctionAuthorizeParams struct {
+type NVCFAuthorizationFunctionAuthorizeParams struct {
 	// Parties authorized to invoke function
-	AuthorizedParties param.Field[[]NvcfAuthorizationFunctionAuthorizeParamsAuthorizedParty] `json:"authorizedParties,required"`
+	AuthorizedParties param.Field[[]NVCFAuthorizationFunctionAuthorizeParamsAuthorizedParty] `json:"authorizedParties,required"`
 }
 
-func (r NvcfAuthorizationFunctionAuthorizeParams) MarshalJSON() (data []byte, err error) {
+func (r NVCFAuthorizationFunctionAuthorizeParams) MarshalJSON() (data []byte, err error) {
 	return apijson.MarshalRoot(r)
 }
 
 // Data Transfer Object(DTO) representing an authorized party.
-type NvcfAuthorizationFunctionAuthorizeParamsAuthorizedParty struct {
+type NVCFAuthorizationFunctionAuthorizeParamsAuthorizedParty struct {
 	// NVIDIA Cloud Account authorized to invoke the function
 	NcaID param.Field[string] `json:"ncaId,required"`
 	// Client Id -- 'sub' claim in the JWT. This field should not be specified anymore.
 	ClientID param.Field[string] `json:"clientId"`
 }
 
-func (r NvcfAuthorizationFunctionAuthorizeParamsAuthorizedParty) MarshalJSON() (data []byte, err error) {
+func (r NVCFAuthorizationFunctionAuthorizeParamsAuthorizedParty) MarshalJSON() (data []byte, err error) {
 	return apijson.MarshalRoot(r)
 }

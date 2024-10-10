@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions_test
+package nvcf_test
 
 import (
 	"context"
@@ -24,7 +24,7 @@ func (t *closureTransport) RoundTrip(req *http.Request) (*http.Response, error) 
 
 func TestUserAgentHeader(t *testing.T) {
 	var userAgent string
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -36,18 +36,18 @@ func TestUserAgentHeader(t *testing.T) {
 			},
 		}),
 	)
-	client.Nvcf.Functions.New(context.Background(), nvidiacloudfunctions.NvcfFunctionNewParams{
-		InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-		Name:         nvidiacloudfunctions.F("x"),
+	client.NVCF.Functions.New(context.Background(), nvcf.NVCFFunctionNewParams{
+		InferenceURL: nvcf.F("https://example.com"),
+		Name:         nvcf.F("x"),
 	})
-	if userAgent != fmt.Sprintf("NvidiaCloudFunctions/Go %s", internal.PackageVersion) {
+	if userAgent != fmt.Sprintf("NVCF/Go %s", internal.PackageVersion) {
 		t.Errorf("Expected User-Agent to be correct, but got: %#v", userAgent)
 	}
 }
 
 func TestRetryAfter(t *testing.T) {
 	attempts := 0
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -62,9 +62,9 @@ func TestRetryAfter(t *testing.T) {
 			},
 		}),
 	)
-	res, err := client.Nvcf.Functions.New(context.Background(), nvidiacloudfunctions.NvcfFunctionNewParams{
-		InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-		Name:         nvidiacloudfunctions.F("x"),
+	res, err := client.NVCF.Functions.New(context.Background(), nvcf.NVCFFunctionNewParams{
+		InferenceURL: nvcf.F("https://example.com"),
+		Name:         nvcf.F("x"),
 	})
 	if err == nil || res != nil {
 		t.Error("Expected there to be a cancel error and for the response to be nil")
@@ -76,7 +76,7 @@ func TestRetryAfter(t *testing.T) {
 
 func TestRetryAfterMs(t *testing.T) {
 	attempts := 0
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -91,9 +91,9 @@ func TestRetryAfterMs(t *testing.T) {
 			},
 		}),
 	)
-	res, err := client.Nvcf.Functions.New(context.Background(), nvidiacloudfunctions.NvcfFunctionNewParams{
-		InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-		Name:         nvidiacloudfunctions.F("x"),
+	res, err := client.NVCF.Functions.New(context.Background(), nvcf.NVCFFunctionNewParams{
+		InferenceURL: nvcf.F("https://example.com"),
+		Name:         nvcf.F("x"),
 	})
 	if err == nil || res != nil {
 		t.Error("Expected there to be a cancel error and for the response to be nil")
@@ -104,7 +104,7 @@ func TestRetryAfterMs(t *testing.T) {
 }
 
 func TestContextCancel(t *testing.T) {
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -116,9 +116,9 @@ func TestContextCancel(t *testing.T) {
 	)
 	cancelCtx, cancel := context.WithCancel(context.Background())
 	cancel()
-	res, err := client.Nvcf.Functions.New(cancelCtx, nvidiacloudfunctions.NvcfFunctionNewParams{
-		InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-		Name:         nvidiacloudfunctions.F("x"),
+	res, err := client.NVCF.Functions.New(cancelCtx, nvcf.NVCFFunctionNewParams{
+		InferenceURL: nvcf.F("https://example.com"),
+		Name:         nvcf.F("x"),
 	})
 	if err == nil || res != nil {
 		t.Error("Expected there to be a cancel error and for the response to be nil")
@@ -126,7 +126,7 @@ func TestContextCancel(t *testing.T) {
 }
 
 func TestContextCancelDelay(t *testing.T) {
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithHTTPClient(&http.Client{
 			Transport: &closureTransport{
 				fn: func(req *http.Request) (*http.Response, error) {
@@ -138,9 +138,9 @@ func TestContextCancelDelay(t *testing.T) {
 	)
 	cancelCtx, cancel := context.WithTimeout(context.Background(), 2*time.Millisecond)
 	defer cancel()
-	res, err := client.Nvcf.Functions.New(cancelCtx, nvidiacloudfunctions.NvcfFunctionNewParams{
-		InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-		Name:         nvidiacloudfunctions.F("x"),
+	res, err := client.NVCF.Functions.New(cancelCtx, nvcf.NVCFFunctionNewParams{
+		InferenceURL: nvcf.F("https://example.com"),
+		Name:         nvcf.F("x"),
 	})
 	if err == nil || res != nil {
 		t.Error("expected there to be a cancel error and for the response to be nil")
@@ -156,7 +156,7 @@ func TestContextDeadline(t *testing.T) {
 	defer cancel()
 
 	go func() {
-		client := nvidiacloudfunctions.NewClient(
+		client := nvcf.NewClient(
 			option.WithHTTPClient(&http.Client{
 				Transport: &closureTransport{
 					fn: func(req *http.Request) (*http.Response, error) {
@@ -166,9 +166,9 @@ func TestContextDeadline(t *testing.T) {
 				},
 			}),
 		)
-		res, err := client.Nvcf.Functions.New(deadlineCtx, nvidiacloudfunctions.NvcfFunctionNewParams{
-			InferenceURL: nvidiacloudfunctions.F("https://example.com"),
-			Name:         nvidiacloudfunctions.F("x"),
+		res, err := client.NVCF.Functions.New(deadlineCtx, nvcf.NVCFFunctionNewParams{
+			InferenceURL: nvcf.F("https://example.com"),
+			Name:         nvcf.F("x"),
 		})
 		if err == nil || res != nil {
 			t.Error("expected there to be a deadline error and for the response to be nil")

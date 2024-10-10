@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-package nvidiacloudfunctions_test
+package nvcf_test
 
 import (
 	"context"
@@ -21,12 +21,12 @@ func TestAssetManagementAssetGet(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	_, err := client.AssetManagement.Assets.Get(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
@@ -42,12 +42,12 @@ func TestAssetManagementAssetDelete(t *testing.T) {
 	if !testutil.CheckTestServer(t, baseURL) {
 		return
 	}
-	client := nvidiacloudfunctions.NewClient(
+	client := nvcf.NewClient(
 		option.WithBaseURL(baseURL),
 	)
 	err := client.AssetManagement.Assets.Delete(context.TODO(), "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e")
 	if err != nil {
-		var apierr *nvidiacloudfunctions.Error
+		var apierr *nvcf.Error
 		if errors.As(err, &apierr) {
 			t.Log(string(apierr.DumpRequest(true)))
 		}
